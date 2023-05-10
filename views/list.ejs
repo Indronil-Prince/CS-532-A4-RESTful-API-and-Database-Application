@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>List of Documents</title>
+    <style>
+      body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+li {
+  margin: 1px 0;
+}
+
+nav {
+  background-color: #30d76d;
+  overflow: hidden;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: right;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav li a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#name{
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-weight: bolder;
+        font-size: large;
+      }
+      table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #dddddd;
+  font-weight: bold;
+}
+  </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li id="name">RESTful API and Database Application</li>
+        <li><a href="query">Query</a></li>
+        <li><a href="list">List</a></li>
+        <li><a href="upload">Upload</a></li>
+      </ul>
+    </nav>
+    <h1>List of Documents</h1>
+        <table>
+          <tr>
+            <th>S/N</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Date Of Birth</th>
+            <th>Position</th>
+            <th>Team Name</th>
+            <th>Team Country</th>
+          </tr>
+
+          <%var x=0; documents.forEach((document) => { x++;%>
+            <tr>
+            <td><%= x %></td>
+            <td><%= document.name %></td>
+            <td><%= document.age %></td>
+            <td><%= document.date.toDateString() %></td>
+            <td><%= document.position %></td>
+            <td><%= document.teamId.teamname%></td>
+            <td><%= document.teamId.country%></td>
+          </tr>
+          <% }); %>
+        </table>
+        
+        <br>
+  </body>
+</html>
